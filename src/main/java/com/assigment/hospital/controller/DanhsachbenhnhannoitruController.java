@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.assigment.hospital.service.BenhnhanService;
 
 import java.sql.Date;
 import java.util.List;
@@ -15,18 +16,20 @@ import java.util.List;
 @Controller
 public class DanhsachbenhnhannoitruController {
 
-    private final DSBNService dsbnService;
+	private final DSBNService dsbnService;
+    private final BenhnhanService benhnhanService;
 
     private final BenhnhanRepository benhnhanRepository;
 
-    public DanhsachbenhnhannoitruController(DSBNService dsbnService, BenhnhanRepository benhnhanRepository) {
+    public DanhsachbenhnhannoitruController(DSBNService dsbnService, BenhnhanService benhnhanService, BenhnhanRepository benhnhanRepository) {
         this.dsbnService = dsbnService;
+        this.benhnhanService = benhnhanService;
         this.benhnhanRepository = benhnhanRepository;
     }
 
     @GetMapping("/danhsachbenhnhannoitru")
     public String danhsachbenhnhannoitru(Model model) {
-
+    	benhnhanService.xoaBenhNhanNull();
         model.addAttribute("listbn", dsbnService.dsbnnt());
         model.addAttribute("list_khoa", dsbnService.list_khoa());
         model.addAttribute("list_phong", dsbnService.list_phong());
