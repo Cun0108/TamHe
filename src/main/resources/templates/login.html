@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Đăng Nhập</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/loginform.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+    <script src="jquery/bootstrap.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+    
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="wrap">
+    <!--start-logo-->
+    <div class="logo">
+      <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+    </div>
+    <!--end-logo-->
+    <!--start-top-nav-->
+    <div class="top-nav">
+      <ul>
+        <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+        <li><a th:href="@{/}">Liên Hệ</a></li>
+      </ul>					
+    </div>
+    <div class="clear"> </div>
+    <!--end-top-nav-->
+  </div>
+  <!--end-header-->
+</div>
+  <form id="form-input" method="post" th:action="@{/signin}">
+    <div class="login-box">
+      <h1>Chào mừng đến với bệnh viện của chúng tôi</h1>
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Tên đăng nhập" name="Tendn" th:name="username">
+      </div>
+
+      <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Mật khẩu" name="Matkhau" th:name="password">
+      </div>
+      <button type="submit" class="btn">Đăng Nhập</button>
+    </div>
+  </form>
+</body>
+
+</html>

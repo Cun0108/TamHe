@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý tài chính</title>
+    <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/patient-infor.css">
+    <link rel="stylesheet" href="css/patient-infor.css">
+    <link rel="stylesheet" href="css/kqxn.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+    <script src="jquery/bootstrap.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a th:href="@{/}">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+    <div class="row">
+        <div class="col-md-3 border" style="height: 700px;" th:insert="component/menu">
+
+        </div>
+
+        <div class="col-md-9">
+            <div class="container">
+                <form class="row justify-content-between form-inline" action="">
+                    <div class="col-4  form-group">
+                        <label for="taichinhchi">Tài Chính Chi:</label>
+                        <input type="text" class="form-control" id="taichinhchi">
+                    </div>
+
+                    <div class=" col-3 input-group">
+                        <input type="search" class="form-control rounded" placeholder="Tim kiem" aria-label="Search" aria-describedby="search-addon">
+                        <button type="button" class="btn btn-outline-primary">Tìm Kiếm</button>
+                    </div>
+                </form>
+                <div class="col-xl-12 ">
+                    <div class="scrollable table-responsive-md">
+
+                        <table class="table table-bordered   ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Lương Bác Sỹ</th>
+                                    <th scope="col">Máu </th>
+                                    <th scope="col">Thuốc </th>
+                                    <th scope="col">Tháng </th>
+                                    <th scope="col">Tổng Tiền </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <form class="row justify-content-between form-inline" action="/action_page.php">
+                    <div class="col-4 offset-0.1 form-group">
+                        <label for="taichinhchi">Tài Chính Thu:</label>
+                        <input type="text" class="form-control" id="taichinhthu">
+                    </div>
+                </form>
+                
+                <div class="col-xl-12 ">
+                    <div class="scrollable table-responsive-md">
+
+                        <table class="table table-bordered   ">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Viện Phí</th>
+                                    <th scope="col">Tháng </th>
+                                    <th scope="col">Tổng tiền </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <form class="row justify-content-between form-inline" action="/action_page.php">
+                    <div class="col-7 offset-0.1  form-group">
+                        <label for="tongtaichinhloinhuan">Tổng Tài Chính Lợi Nhuận:</label>
+                        <input type="text" class="form-control" id="tongtaichinhloinhuan">
+                    </div>
+
+                    <div class=" col-1 input-group">
+
+                        <button type="button" class="btn btn-outline-primary">Cập nhật</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

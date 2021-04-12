@@ -1,0 +1,19 @@
+server:
+    port: 8080
+
+spring:
+    datasource:
+        url: jdbc:mysql://localhost:3306/hospital
+        username: root
+        password: root
+
+    thymeleaf:
+        cache: false
+        prefix: file:src/main/resources/templates/
+
+    jpa:
+        hibernate:
+            ddl-auto: none
+
+
+

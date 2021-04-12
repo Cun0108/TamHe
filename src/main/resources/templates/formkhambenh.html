@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trang chủ bệnh viện</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="shortcut icon" th:href="@{images/fevicon.ico.png}" type="image/x-icon" /> -->
+    <!-- <link rel="apple-touch-icon" th:href="@{images/apple-touch-icon.png}"> -->
+    <link rel="stylesheet" th:href="@{fontawesome-free-5.15.2-web/css/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{bootstrap-4.5.3-dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{css/patient-infor.css}">
+    <!-- <link rel="stylesheet" th:href="@{css/kqxn.css"> -->
+    <link rel="stylesheet" th:href="@{css/main-page.css}">
+    <script th:src="@{jquery/jquery.min.js}"></script>
+    <script th:src="@{jquery/popper.min.js}"></script>
+    <script th:src="@{jquery/bootstrap.min.js}"></script>
+    <script th:src="@{jquery/jquery.validate.min.js}"></script>
+</head>
+
+<body style="background-image: url(images/hospital-background.jpg);">
+
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a th:href="@{/}">Liên Hệ</a></li>
+                    <li>
+                        <div class="dropdown p-3 pl-5" id="user_icon">
+                            <p class="fas fa-user"></p>
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a th:href="@{/}" class="dropdown-item"><i class="fas fa-user"></i> User Profile</a>
+                              <div class="dropdown-divider"></div>
+                              <a th:href="@{/logout}" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"> 
+                
+            </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="height: 700px;" th:insert="component/menu">
+        </div>
+
+
+        <div class="col-md-9">
+            <section class="about text-center" id="about">
+                <div class="container">
+                    <div class="row">
+                        <form th:action="@{/phieukhambenh}" method="POST">
+                            <label for="mabn">Nhập mã bệnh nhân:</label>
+                            <input id="mabn" type="text" name="mabn">
+                            <input type="submit" value="Xác nhận">
+                        </form>
+                        <button onclick="nhaplai()">Nhập lại</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        function nhaplai() {
+            document.getElementById("mabn").value = "";
+        }
+    </script>
+</body>
+
+</html>

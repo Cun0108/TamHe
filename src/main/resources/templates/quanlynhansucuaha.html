@@ -1,0 +1,305 @@
+<!-- Nav tabs -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Quản lý nhân sự</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/patient-infor.css">
+    <link rel="stylesheet" href="css/patient-infor.css">
+    <link rel="stylesheet" href="css/kqxn.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+    <script src="jquery/bootstrap.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+    <script src="js/validate.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a th:href="@{/}">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 border" style="height: 700px;" th:insert="component/menu">
+
+        </div>
+
+        <div class="col-9">
+            <div class="container">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="navId">
+                    <li class="nav-item">
+                        <a href="#tab1Id" class="nav-link active" data-toggle="tab">Nhân Sự</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#tab2Id" class="nav-link" data-toggle="tab">Tiền Lương</a>
+                    </li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="tab1Id" role="tabpanel">
+                        <div class=" col-4 offset-8 input-group mb-3 mt-3">
+                            <input type="search" class="form-control rounded " placeholder="Thông tin nhân sự" aria-label="Search" aria-describedby="search-addon">
+                            <button type="button" class="btn btn-primary">Tìm Kiếm</button>
+                        </div>
+                        <div class="col-xl-12 ">
+                            <div class="scrollable table-responsive-md">
+
+                                <table class="table table-bordered   ">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">STT</th>
+                                            <th scope="col">Mã Số</th>
+                                            <th scope="col">Họ Tên </th>
+                                            <th scope="col">Giới Tính </th>
+                                            <th scope="col">Ngày Sinh</th>
+                                            <th scope="col">Quê Quán </th>
+                                            <th scope="col">Khoa </th>
+                                            <th scope="col">Trạng Thái </th>
+                                            <th scope="col" class="form-check-label" for="flexCheckDisabled">Xóa </th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <form class="row justify-content-between form-inline">
+                            <div class="col-4 offset-0.1 form-group mb-3">
+                                <label for="tongsonhansu">Tổng Số Nhân Sự:</label>
+                                <input type="text" class="form-control" id="tongsonhansu">
+                            </div>
+                            <input class="col-1 offset-2 btn btn-primary" type="button" value="Thêm">
+                            <input class="col-1 offset-0.2 btn btn-primary" type="button" value="Sửa">
+                            <input class="col-1 btn btn-primary" type="button" value="Xóa">
+                            <input class="col-1 btn btn-primary" type="button" value="Cập nhật">
+                        </form>
+
+
+                    </div>
+
+                    <div class="tab-pane fade" id="tab2Id" role="tabpanel">
+                        <form class="row justify-content-between form-inline">
+                            <div class="col-4 form-group">
+                                <label for="taichinhchi">Thống kê tiền lương nhân sự:</label>
+
+                            </div>
+
+                            <div class=" col-3 input-group mb-3 mt-3">
+                                <input type="search" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search" aria-describedby="search-addon">
+                                <button type="button" class="btn btn-primary">Tìm Kiếm</button>
+                            </div>
+                        </form>
+                        <div class="col-xl-12 ">
+                            <div class="scrollable table-responsive-md">
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">STT</th>
+                                            <th scope="col">Mã Số</th>
+                                            <th scope="col">Họ Tên </th>
+                                            <th scope="col">Giới Tính </th>
+                                            <th scope="col">Chức Vụ</th>
+                                            <th scope="col">Hệ Số Lượng </th>
+                                            <th scope="col">Tiền Lương($/Tháng) </th>
+                                            <th scope="col">Tiền Thưởng </th>
+                                            <th scope="col">Phí Bảo Hiểm</th>
+                                            <th scope="col">Thực Lĩnh </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between">
+                            <div class="col-2 input-group">
+                                <label for="tongso">Tổng Số :</label>
+                                <input type="text" class="form-control" id="tongso" disabled>
+                            </div>
+
+                            <div class="col-3 input-group">
+                                <label for="tongtien">Tổng Tiền :</label>
+                                <input type="text" class="form-control" id="tongtien" disabled>
+                            </div>
+
+                            <div class="col-3 input-group">
+                                <label for="giaidoan">Giai Đoạn:</label>
+                                <input type="date" class="form-control" id="tongsonhansu" disabled>
+                            </div>
+
+                            <div class="col-3 input-group">
+                                <label for="den">Đến:</label>
+                                <input type="date" class="form-control" id="tongsonhansu">
+                            </div>
+                            <input class="col-1 btn btn-primary mb-3" type="button" value="Cập nhật">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kqxn.css">
+    <link rel="stylesheet" type="text/css" href="css/patient-infor.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+    <script src="jquery/bootstrap.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+    
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a th:href="@{/}">Liên Hệ</a></li>
+                    <li>
+                        <div class="dropdown p-3 pl-5" id="user_icon">
+                            <p class="fas fa-user"></p>
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                              <a th:href="@{/}" class="dropdown-item"><i class="fas fa-user"></i> User Profile</a>
+                              <div class="dropdown-divider"></div>
+                              <a th:href="@{/logout}" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                          </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"> 
+                
+            </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Điều Trị Nội Trú</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script th:src="@{main.js}"></script>
+    <link rel="stylesheet" th:href="@{fontawesome-free-5.15.2-web/css/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{bootstrap-4.5.3-dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="css/kqxn.css">
+    <link rel="stylesheet" type="text/css" th:href="@{css/patient-infor.css}">
+    <script th:src="@{jquery/jquery.min.js}"></script>
+    <script th:src="@{jquery/popper.min.js}"></script>
+    <script th:src="@{jquery/bootstrap.min.js}"></script>
+    <script th:src="@{jquery/jquery.validate.min.js}"></script>
+    <script th:src="@{js/validate.js}"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a href="contact.php">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+    <div class="row">
+        <div class="col-md-3 border" style="height: 700px;" th:insert="component/menu">
+
+        </div>
+
+        <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div>
+                        <h1 class="m-auto">Điều Trị Nội Trú</h1>
+                    </div>
+                </div>
+
+                <input type="number" hidden name="mabn" th:value="${bn.maBn}" id="ss">
+                <form id="form-dtnt" th:action="@{/findthuoc}" method="post">
+                    <input type="number" hidden name="mabn" th:value="${bn.maBn}">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="a123">Mã số</label>
+                            <input type="text" class="form-control" id="a123" th:value="${bn.maBn}" disabled>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="a456">Bệnh nhân</label>
+                            <input type="text" class="form-control" id="a456" th:value="${bn.hoTen}" disabled>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="a758">Ngày sinh</label>
+                            <input type="text" class="form-control" id="a758" th:value="${bn.ngaySinh}" disabled>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="a124">Giới tính</label>
+                            <input type="text" class="form-control" id="a124" th:value="${bn.gioiTinh}" disabled>
+                        </div>
+                    </div>
+                    <div class="form-row d-flex justify-content-start my-md-4">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInput">Name</label>
+                            <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Tìm kiếm" name="thuoc">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2">Tìm</button>
+                            <button type="button" class="btn btn-primary mb-2" id="abcd"> Thêm </button>
+                        </div>
+                    </div>
+
+
+                </form>
+
+                <form th:action="@{/updatedieutrinoitru}" method="post">
+
+                <input type="number" hidden name="mabn" th:value="${bn.maBn}">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Thời gian</th>
+                            <th scope="col">Thuốc</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fx">
+                        <tr th:if="${#lists.isEmpty(list_dt)}" >
+
+                        </tr>
+
+                        <tr th:each="donthuoc : ${list_dt}">
+                            <td>
+                                <p th:text="${donthuoc.thoigian}" ></p>
+<!--                                <input type="date" name="maBn" th:value="${donthuoc.thoigian}" hidden>-->
+                            </td>
+
+                            <td>
+                                <p th:text="${donthuoc.thuoc}" ></p>
+<!--                                <input type="text" name="thuoc" th:value="${donthuoc.thuoc}" hidden>-->
+                            </td>
+
+                            <td>
+                                <p th:text="${donthuoc.soluong}" ></p>
+<!--                                <input type="number" name="soluong" th:value="${donthuoc.soluong}" hidden>-->
+                            </td>
+
+                            <td>
+                                <p th:text="${donthuoc.tien}" ></p>
+<!--                                <input type="number" name="tien" th:value="${donthuoc.tien}" hidden>-->
+                            </td>
+
+                            <td>
+<!--                                <input type="text" name="isAdded" th:value="${donthuoc.id}" hidden>-->
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#abcd").click(function () {
+            console.log("abc")
+            $("#fx").append(
+                "<tr>" +
+                    "<td>"+
+                        "<input type='date' name='thoigian'>" +
+                    "</td>"+
+                    "<td>"+
+                        "<input type='text' name='thuoc'>" +
+                    "</td>"+
+                    "<td>"+
+                        "<input type='number' name='soluong'>" +
+                    "</td>"+
+                    "<td>"+
+                        "<input type='number' name='tien'>" +
+                    "</td>" +
+                        // +
+                    // "<td>" +
+                    //     "<input type='text' name='isAdded' value='themmoi' hidden>" +
+                    // "</td>" +
+                "</tr>"
+            );
+        });
+    </script>
+</body>
+
+</html>

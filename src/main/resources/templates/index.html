@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Bệnh viện</title>
+	<link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/responsiveslides.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+	<link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+	<script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+			$("#slider1").responsiveSlides({
+				maxwidth: 1600,
+				speed: 60
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!--start-wrap-->
+
+	<!--start-header-->
+	<div class="header">
+		<div class="wrap">
+			<!--start-logo-->
+			<div class="logo">
+				<a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+			</div>
+			<!--end-logo-->
+			<!--start-top-nav-->
+			<div class="top-nav">
+				<ul>
+					<li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+					<li><a th:href="@{/}">Liên Hệ</a></li>
+				</ul>
+			</div>
+			<div class="clear"> </div>
+			<!--end-top-nav-->
+		</div>
+		<!--end-header-->
+	</div>
+	<div class="clear"> </div>
+	<!--start-image-slider---->
+	<div class="image-slider">
+		<!-- Slideshow 1 -->
+		<ul class="rslides" id="slider1">
+			<li><img src="images/image1.jpg" alt=""></li>
+			<!-- <li><img src="images/image2.jpg" alt=""></li> -->
+			<!-- <li><img src="images/image3.jpg" alt=""></li> -->
+			<li><img src="images/1282862.jpg" alt=""></li>
+			<li><img src="images/4112932.jpg" alt=""></li>
+			<!-- <li><img src="images/1282825.jpg" alt=""></li> -->
+			<li><img src="images/958470.jpg" alt=""></li>
+			<li><img src="images/960605.jpg" alt=""></li>
+			<li><img src="images/983117.jpg" alt=""></li>
+		</ul>
+		<!-- Slideshow 2 -->
+	</div>
+	<!--End-image-slider---->
+	<div class="clear"> </div>
+	<!-- <div class="content-grids">
+		<div class="wrap">
+			<div class="section group">
+
+				<div class="listview_1_of_3 images_1_of_3">
+					<a href="login.html">
+						<div class="listimg listimg_1_of_2">
+							<img src="images/grid-img3.png">
+						</div>
+						<div class="text list_1_of_2">
+							<h3>Y Tá, Y Vụ</h3>
+							
+							<div class="button"><span><a href="login.html">Đăng Nhập</a></span></div>
+						</div>
+					</a>
+				</div>
+
+				<div class="listview_1_of_3 images_1_of_3">
+					<a href="login.html">
+						<div class="listimg listimg_1_of_2">
+							<img src="images/grid-img1.png">
+						</div>
+						<div class="text list_1_of_2">
+							<h3>Bác Sỹ</h3>
+
+							<div class="button"><span><a href="login.html">Đăng Nhập</a></span></div>
+						</div>
+					</a>
+				</div>
+
+				<div class="listview_1_of_3 images_1_of_3">
+					<a href="login.html">
+						<div class="listimg listimg_1_of_2">
+							<img src="images/grid-img2.png">
+						</div>
+						<div class="text list_1_of_2">
+							<h3>Admin</h3>
+	
+							<div class="button"><span><a href="login.html">Đăng Nhập</a></span></div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<div class="listimg listimg_1_of_2">
+						<img src="images/grid-img1.png">
+					</div>
+					<h5 class="card-title">Đăng nhập cho bác sỹ, y vụ, kế toán</h5>
+					<p class="card-text">Nơi đăng nhập dành bác sỹ, y tá các kiểu con đà điểu nhưng mà phải có tài khoản, nếu chưa có thì nhìn sang phải bạn nhó!!</p>
+					<a th:href="@{/login}" class="btn btn-primary">Đăng Nhập</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="card">
+				<div class="card-body">
+					<div class="listimg listimg_1_of_2">
+						<img src="images/grid-img3.png">
+					</div>
+					<h5 class="card-title">Chưa có tài khoản?</h5>
+					<p class="card-text">Đúng rồi!!! nếu bạn chưa có tài khoản thì đưa chuột vào đây nào, đăng ký ở đây bạn nhó !!!</p>
+					<a th:href="@{/dangki}" class="btn btn-primary">Đăng Ký</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrap">
+		<div class="content-box">
+			<div class="section group">
+				<div class="col_1_of_3 span_1_of_3 frist">
+
+				</div>
+				<div class="col_1_of_3 span_1_of_3 second">
+
+				</div>
+				<div class="col_1_of_3 span_1_of_3 frist">
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"> </div>
+	<div class="footer">
+		<div class="wrap">
+			<div class="footer-left">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="contact.php">contact</a></li>
+				</ul>
+			</div>
+
+			<div class="clear"> </div>
+		</div>
+	</div>
+	<!--end-wrap-->
+	<footer th:insert="component/copyright">
+	</footer>
+</body>
+
+</html>

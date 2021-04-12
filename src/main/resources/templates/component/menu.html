@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul class="nav sidebar-nav">
+        <div class="sidebar-header">
+            <div class="sidebar-brand">
+                <a href="#">Khám bệnh</a>
+            </div>
+        </div>
+        <li class="text-center"><a th:href="@{/tiepnhanbenhnhan}" class="fa fa-bed">Quản lí tiếp nhận bệnh nhân</a></li>
+        <li class="text-center"><a th:href="@{/phieukhambenh}" class="fa fa-heartbeat">Quản lí khám bệnh</a></li>
+        <li class="text-center"><a th:href="@{/phieuxetnghiem}" class="fa fa-stethoscope">Quản lí xét nghiệm</a></li>
+        <li class="text-center"><a th:href="@{/ketquaxetnghiem}" class="fa fa-plus-square">Quản lí kết quả xét nghiệm</a></li>
+        <li class="text-center"><a th:href="@{/danhsachbenhnhannoitru}" class="fa fa-procedures">Quản lí nội trú</a></li>
+        <li class="text-center"><a th:href="@{/dieutrinoitru}" class="fa fa-clinic-medical">Quản lí điều trị nội trú</a></li>
+        <li class="text-center"><a th:href="@{/hosobenhnhan}" class="fa fa-hand-holding-medical">Quản lí bệnh án</a></li>
+    </ul>
+</body>
+</html>

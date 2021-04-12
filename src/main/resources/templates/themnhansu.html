@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Thêm nhân sự</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/kqxn.css">
+    <link rel="stylesheet" href="css/patient-infor.css">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+    <script src="jquery/bootstrap.min.js"></script>
+    <script src="jquery/jquery.validate.min.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a href="contact.php">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+    <div class="row">
+        <div class="col-3 border" style="height: 700px;" th:insert="component/menu">
+
+        </div>
+
+        <div class="col-9">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div>
+                        <h1 class="m-auto">Thêm nhân sự</h1>
+                    </div>
+                </div>
+
+                <div class="card border-dark mb-3 my-md-4" style="max-width: 100%;">
+                    <div class="card-header">Thông tin cơ bản</div>
+                    <div class="card-body text-dark">
+                        <div class="form-group">
+                            <div class="form-inline">
+                                <label class="col-md-2">Họ tên: </label>
+                                <input type="text" class="my-1 mr-2">
+                                <label class="col-md-2">Giới tính: </label>
+                                <input type="text" class="my-1 mr-2">
+                            </div>
+                            <div class="form-inline">
+                                <label class="col-md-2">Ngày sinh: </label>
+                                <input type="text" class="my-1 mr-2">
+                                <label class="col-md-2">Quê quán: </label>
+                                <input type="text" class="my-1 mr-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-dark mb-3" style="max-width: 100%;">
+                    <div class="card-header">Thông tin bệnh viện</div>
+                    <div class="card-body text-dark">
+                        <div class="form-group">
+                            <div class="form-inline">
+                                <label class="col-md-2">Chức vụ: </label>
+                                <input type="text" class="my-1 mr-2">
+                                <label class="col-md-2">Hệ số lương: </label>
+                                <input type="text" class="my-1 mr-2">
+                            </div>
+                            <div class="form-inline">
+                                <label class="col-md-2">Khoa: </label>
+                                <input type="text" class="my-1 mr-2">
+                                <label class="col-md-2">Tiền lương: </label>
+                                <input type="text" class="my-1 mr-2">
+                            </div>
+                            <div class="form-inline">
+                                <label class="col-md-2">Trạng thái hoạt động: </label>
+                                <input type="text" class="my-1 mr-2">
+                                <label class="col-md-2">Mô tả thêm: </label>
+                                <input type="text" class="my-1 mr-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-inline">
+                        <button type="submit" class="btn btn-success my-1 mr-2">Lưu</button>
+                        <button type="submit" class="btn btn-dark my-1 mr-2">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

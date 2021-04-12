@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="shortcut icon" th:href="@{images/fevicon.ico.png}" type="image/x-icon" /> -->
+    <link rel="stylesheet" th:href="@{fontawesome-free-5.15.2-web/css/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{bootstrap-4.5.3-dist/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/patient-infor.css}">
+    <link rel="stylesheet" th:href="@{css/patient-infor.css}">
+    <link rel="stylesheet" th:href="@{css/kqxn.css}">
+    <script th:src="@{jquery/jquery.min.js}"></script>
+    <script th:src="@{jquery/popper.min.js}"></script>
+    <script th:src="@{jquery/bootstrap.min.js}"></script>
+    <script th:src="@{jquery/jquery.validate.min.js}"></script>
+    <script th:src="@{js/validate.js}"></script>
+    <title>Thông tin bệnh nhân</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a th:href="@{/}">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="height: 700px;" th:insert="component/menu">
+
+        </div>
+
+        <div class="col-md-9">
+            <div class="container">
+                <h1 class="text-center mt-2">Thông tin bệnh nhân</h1>
+                <div>
+                    <label>Mã số bệnh nhân:</label>
+                    <label id="maBenhNhan" class="ml-5"><p th:text="${benhNhan.maBn}"></p></label>
+                </div>
+                <br>
+                <hr style="border-top: 1px solid;" class="mt-0">
+
+                <form id="form-qlttbn" th:action="@{/tiepnhanbenhnhan}" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="maBn" th:value="${benhNhan.maBn}" hidden />
+                    <div class="form-row">
+                        <label class="important">Họ tên:</label>
+                        <div class="form-group col-6">
+                            <input id="hoTen" type="text" class="form-control" style="margin-left: 110px;" placeholder="Nhập họ tên" name="hoTen">
+                        </div>
+                    </div>
+                    
+                    <label for="ngaySinh" class="important">Ngày sinh:</label>
+                    <input type="date" class="w-50" style="margin-left: 90px;" id="ngaySinh" name="ngaySinh">
+                    <label class="important ml-5">Giới tính:</label>
+                    <div class="form-check-inline">
+                        <input class="form-check-input ml-3" type="radio" name="gioiTinh" id="radioNam" value="true" checked>
+                        <strong class="form-check-label" for="radioNam">Nam</strong>
+                        <input class="form-check-input ml-3" type="radio" name="gioiTinh" id="radioNu" value="false">
+                        <strong class="form-check-label" for="radioNu">Nữ</strong>
+                    </div>
+                    
+                    <div class="form-row mt-3">
+                        <label class="important">Số điện thoại:</label>
+                        <div class="form-group col-6">
+                            <input id="soDienThoai" type="tel" class="form-control" style="margin-left: 65px;" placeholder="Nhập số điện thoại" name="soDienThoai">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label class="important">Địa chỉ:</label>
+                        <div class="form-group col-9">
+                            <input id="diaChi" type="tel" class="form-control" style="margin-left: 110px;" name="diaChi" placeholder="Nhập địa chỉ">
+                        </div>
+                    </div>
+                    <br>
+                    <hr style="border-top: 1px solid;" class="mt-0">
+                    <label for="ngayTiepNhan" class="important">Ngày tiếp nhận:</label>
+                    <input type="date" class="w-50 ml-5" id="ngayTiepNhan" name="ngayTiepNhan">
+                    <div class="form-row mt-2">
+                        <label class="important mt-1 ml-1">Khám:</label>
+                        <div class="form-group col-6">
+                            <input id="noiDungKham" type="text" class="form-control" style="margin-left: 115px;" name="noiDungKham">
+                        </div>
+                        <label class="important mt-1" style="margin-left: 140px;">Phòng khám:</label>
+                        <div class="form-group col-2">
+                            <input id="maKhoa" type="text" class="form-control" name="maKhoa">
+                        </div>
+                    </div>
+                    <label class="important ">Đối tượng:</label>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" style="margin-left: 80px;" type="radio" name="doiTuong" id="radioKhong" value="false" checked>
+                        <strong class="form-check-label" for="radioKhong">Không bảo hiểm</strong>
+                        <input class="form-check-input ml-5" type="radio" name="doiTuong" id="radioCo" value="true">
+                        <strong class="form-check-label" for="radioCo">Có bảo hiểm</strong>
+                    </div>
+                    <div class="container col-md-8">
+                        <div class="form-row">
+                            <label class="important mt-2">Số thẻ bảo hiểm</label>
+                            <div class="form-group ml-2 col-8 mt-1">
+                                <input id="soTheBaoHiem" type="text" class="form-control" name="soTheBaoHiem">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label class="important mt-1">Loại bảo hiểm:</label>
+                            <div class="form-group ml-4 col-2">
+                                <select id="loaiBaoHiem" class="form-control" name="loaiBaoHiem">
+                                    <option value="0" selected>Chọn...</option>
+                                    <option value="25">25%</option>
+                                    <option value="50">50%</option>
+                                    <option value="100">100%</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <strong>Nhập viện</strong>
+                        <div class="form-check">
+                            <input class="form-check-input ml-2" type="checkbox" id="checkNhapVien" name="nhapVien">
+                        </div>
+                        <div class="border col-md-8" style="margin-left: 95px;">
+                            <textarea id="lyDoNhapVien" class="col-12 mt-2" name="lyDoNhapVien"></textarea>
+                        </div>
+                    </div>
+                    <label class="important">Lý do nhập viện</label>
+                    <div class="form-row mb-3" style="margin-left: 900px;">
+                        <button id="btnLuu" type="submit" class="btn btn-secondary">Lưu</button>
+                        <button id="btnHuy" type="button" class="btn btn-secondary ml-2" onclick="boQua()">Bỏ qua</button>
+                       
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function boQua() {
+            document.getElementById("hoTen").value = "";
+            document.getElementById("ngaySinh").value = null;
+            document.getElementById("radioNam").checked = true;
+            document.getElementById("soDienThoai").value = "";
+            document.getElementById("diaChi").value = "";
+            document.getElementById("ngayTiepNhan").value = null;
+            document.getElementById("noiDungKham").value = "";
+            document.getElementById("maKhoa").value = "";
+            document.getElementById("radioKhong").checked = true;
+            document.getElementById("soTheBaoHiem").value = "";
+            document.getElementById("loaiBaoHiem").selectedIndex = "0";
+            document.getElementById("checkNhapVien").checked = false;
+        }
+    </script>
+</body>
+
+</html>

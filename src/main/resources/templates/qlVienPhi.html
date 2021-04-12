@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/fevicon.ico.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="fontawesome-free-5.15.2-web/css/all.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/patient-infor.css">
+    <link rel="stylesheet" type="text/css" href="css/qlXetNghiem1.css">
+    <link rel="stylesheet" href="css/kqxn.css">
+    <title>Quan li vien phi</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="wrap">
+            <!--start-logo-->
+            <div class="logo">
+                <a th:href="@{/}" style="font-size: 30px;">Hệ thống quản lý bệnh viện</a>
+            </div>
+            <!--end-logo-->
+            <!--start-top-nav-->
+            <div class="top-nav">
+                <ul>
+                    <li class="active"><a th:href="@{/}">Trang Chủ</a></li>
+
+                    <li><a href="contact.php">Liên Hệ</a></li>
+                </ul>
+            </div>
+            <div class="clear"> </div>
+            <!--end-top-nav-->
+        </div>
+        <!--end-header-->
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 border" style="height: 700px;" th:insert="component/menu">
+
+        </div>
+
+
+        <div class="col-md-9">
+            <div class="container">
+                <h1 class="text-center">Quản lý viện phí</h1>
+                <div class="col-md-8 ml-5">
+                    <div class="form-inline mt-2">
+                        <div class="form-group">
+                            <label>Bệnh nhân:</label>
+                            <input type="text" class="form-control ml-3" name="tenBenhNhan" id="tenBenhNhan">
+                            <label style="margin-left: 120px;">Mã số:</label>
+                            <input type="text" class="form-control ml-4" name="maSo" id="maSo">
+                        </div>
+                    </div>
+                    <div class="form-inline mt-2">
+                        <div class="form-group">
+                            <label>Ngày sinh:</label>
+                            <input type="text" class="form-control ml-3" name="ngaySinh1" id="ngaySinh1">
+                            <label style="margin-left: 120px;">Giới tính:</label>
+                            <input type="text" class="form-control ml-2" name="gioiTinh" id="gioiTinh">
+                        </div>
+                    </div>
+                </div>
+
+                
+                    <strong>Khám bệnh</strong>
+                    <table class="table table-bordered table-dark" id="tbKhamBenh">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Tên Dịch Vụ</th>
+                                <th scope="col">Đơn vị</th>
+                                <th scope="col">Số Lượng</th>
+                                <th scope="col">Đơn Giá</th>
+                                <th scope="col">Miễn Giảm</th>
+                                <th scope="col">Thành Tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Khám bệnh chung</td>
+                                <td>lần</td>
+                                <td>1</td>
+                                <td>20000</td>
+                                <td>0</td>
+                                <td>20000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>Xét nghiệm</strong>
+                    <table class="table table-bordered table-dark" id="tbXetNghiem">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Tên Dịch Vụ</th>
+                                <th scope="col">Đơn vị</th>
+                                <th scope="col">Số Lượng</th>
+                                <th scope="col">Đơn Giá</th>
+                                <th scope="col">Miễn Giảm</th>
+                                <th scope="col">Thành Tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Glucose</td>
+                                <td>lan</td>
+                                <td>1</td>
+                                <td>200000</td>
+                                <td>50000</td>
+                                <td>150000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Ure</td>
+                                <td>lần</td>
+                                <td>1</td>
+                                <td>30000</td>
+                                <td>0</td>
+                                <td>30000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>Thuốc</strong>
+                    <table class="table table-bordered table-dark" id="tbThuoc">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Tên Dịch Vụ</th>
+                                <th scope="col">Đơn vị</th>
+                                <th scope="col">Số Lượng</th>
+                                <th scope="col">Đơn Giá</th>
+                                <th scope="col">Miễn Giảm</th>
+                                <th scope="col">Thành Tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Alimemazin</td>
+                                <td>vỉ</td>
+                                <td>1</td>
+                                <td>20000</td>
+                                <td>0</td>
+                                <td>20000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Prenisolon</td>
+                                <td>vỉ</td>
+                                <td>1</td>
+                                <td>30000</td>
+                                <td>0</td>
+                                <td>30000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <strong>Nội trú</strong>
+                    <table class="table table-bordered table-dark" id="tbNoiTru">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Phòng</th>
+                                <th scope="col">Ngày bắt đầu</th>
+                                <th scope="col">Số ngày</th>
+                                <th scope="col">Đơn giá</th>
+                                <th scope="col">Miễn Giảm</th>
+                                <th scope="col">Thành Tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>A102</td>
+                                <td>26/02/2020</td>
+                                <td>5</td>
+                                <td>150000</td>
+                                <td>50000</td>
+                                <td>100000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+             
+
+                <label style="margin-left: 650px; background-color: whitesmoke;">Tổng chi phí:</label>
+                <input type="text" id="tongTien" class="ml-3" name="tongTien" disabled>
+                <button type="submit" class="btn btn-secondary ml-4">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
