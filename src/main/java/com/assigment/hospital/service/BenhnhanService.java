@@ -59,7 +59,7 @@ public class BenhnhanService {
                                     List<String> noiDungKham,
                                     List<Date> ngayTiepNhan,
                                     List<Long> isDelete) {
-        for (int i = 0; i < mabn.size(); i++) {
+    	for (int i = 0; i < mabn.size(); i++) {
             boolean gioitinh = true;
             if (gioiTinh.get(i).equalsIgnoreCase("Nam")) {
                 gioitinh = true;
@@ -67,19 +67,24 @@ public class BenhnhanService {
                 gioitinh = false;
             }
             BenhnhanEntity benhNhan = getById(mabn.get(i));
+            boolean canDetete = false;
             for (int j = 0; j < isDelete.size(); j++) {
                 if (mabn.get(i) == isDelete.get(j)) {
                     repository.deleteById(isDelete.get(j));
-                } else {
-                    benhNhan.setHoTen(hoTen.get(i));
-                    benhNhan.setNgaySinh(ngaySinh.get(i));
-                    benhNhan.setDiaChi(diaChi.get(i));
-                    benhNhan.setGioiTinh(gioitinh);
-                    benhNhan.setNoiDungKham(noiDungKham.get(i));
-                    benhNhan.setNgayTiepNhan(ngayTiepNhan.get(i));
-                    repository.saveAndFlush(benhNhan);
+                    canDetete = true;
+                    break;
                 }
             }
+
+            if (canDetete) continue;
+
+            benhNhan.setHoTen(hoTen.get(i));
+            benhNhan.setNgaySinh(ngaySinh.get(i));
+            benhNhan.setDiaChi(diaChi.get(i));
+            benhNhan.setGioiTinh(gioitinh);
+            benhNhan.setNoiDungKham(noiDungKham.get(i));
+            benhNhan.setNgayTiepNhan(ngayTiepNhan.get(i));
+            repository.saveAndFlush(benhNhan);
         }
     }
 
