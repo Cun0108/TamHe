@@ -19,7 +19,7 @@
     <script src="jquery/jquery.validate.min.js"></script>
 </head>
 
-<body style="background-image: url(images/bg-testimonial.png);">
+<body style="background-image: url(images/hospital-background.jpg);">
 
     <div class="header">
         <div class="wrap">
@@ -39,7 +39,7 @@
                             <p class="fas fa-user"></p>
                             <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"></button>
                             <div class="dropdown-menu dropdown-menu-right">
-                              <a th:href="@{/}" class="dropdown-item"><i class="fas fa-user"></i> User Profile</a>
+                              <a th:href="@{/}" class="dropdown-item"><i class="fas fa-user" th:text="${user}"></i>  </a>
                               <div class="dropdown-divider"></div>
                               <a th:href="@{/logout}" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
                             </div>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3" style="height: 700px;" th:insert="component/menu">
+        <div class="col-md-3 border" style="height: 700px;" th:insert="component/menu">
         </div>
 
 
@@ -64,8 +64,9 @@
             <section class="about text-center" id="about">
                 <div class="container">
                     <div class="row">
-                        <h3 class="m-auto mb-3">Tam Hệ Hospital</h3>
-                        <h4>Nếu cảm thấy mệt quá, hãy đến với bọn anh, thì thầm anh nói nhỏ: bệnh viện anh số hai thì không ai là số một!!! Sức khỏe của bạn là hạnh phúc của chúng tôi <3</h4>
+                        <h3 class="m-auto mb-3">3 đời thần y</h3>
+                        <h4>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                            unknown printer took a galley of type and scrambled</h4>
                         <div class="col-md-4 col-sm-6">
                             <div class="single-about-detail clearfix">
                                 <div class="about-img">

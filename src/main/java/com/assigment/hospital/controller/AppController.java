@@ -2,10 +2,9 @@ package com.assigment.hospital.controller;
 
 import com.assigment.hospital.dto.TaiKhoanDTO;
 import com.assigment.hospital.entity.TaikhoanEntity;
+import com.assigment.hospital.repository.TaiKhoanRepository;
 import com.assigment.hospital.security.UserPrincipal;
-import com.assigment.hospital.service.DSBNService;
 import com.assigment.hospital.service.TaiKhoanService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +15,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AppController {
 
-    @Autowired
-    private DSBNService service;
+    private final TaiKhoanRepository taiKhoanRepository;
 
     private final TaiKhoanService taiKhoanService;
 
-    public AppController(TaiKhoanService taiKhoanService) {
+    public AppController(TaiKhoanRepository taiKhoanRepository, TaiKhoanService taiKhoanService) {
+        this.taiKhoanRepository = taiKhoanRepository;
         this.taiKhoanService = taiKhoanService;
     }
 
@@ -64,7 +63,10 @@ public class AppController {
     }
 
     @GetMapping("/main-page")
-    public String mainPage() {
+    public String mainPage(Authentication authResult, Model model) {
+        UserPrincipal userPrincipal = (UserPrincipal) authResult.getPrincipal();
+        TaikhoanEntity taikhoan = taiKhoanRepository.findTaikhoanEntityByUsername(userPrincipal.getUsername()).get();
+        model.addAttribute("user", taikhoan.getUsername());
         return "main-page";
     }
 
